@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Tomorrow</title>
+   
+</head>
+<body>
+    <style> 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.story-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), 
+                url('waste-trucks.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px;
+    height: 90vh;
+}
+
+.story-content {
+    max-width: 50%;
+}
+
+.story-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.story-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.story-content .highlight {
+    color: white;
+}
+
+.story-content p {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.history-section {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.text-content {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 32%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.green-underline {
+    height: 4px;
+    width: 100%;
+    background-color: #6ba539;
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+    .story-content h1 {
+        font-size: 28px;
+    }
+
+    .story-content p,
+    .text-content p {
+        font-size: 15px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-content h1 {
+        font-size: 24px;
+    }
+
+    .story-content h4 {
+        font-size: 12px;
+    }
+
+    .story-banner {
+        padding: 30px 15px;
+    }
+}
+    </style>
+    <section class="story-banner">
+        <div class="story-content">
+            <h4>OUR STORY</h4>
+            <h1>Always Working For A <br> <span class="highlight">Sustainable Tomorrow<sup>®</sup></span></h1>
+            <p>From "Waste Management" to  our company has evolved from waste services provider to sustainability leader.</p>
+        </div>
+        <section class="history-section">
+            <div class="text-content">
+                <p> Our mission is to redefine waste management by integrating sustainability, innovation, and smart technology to create a cleaner, greener future.</p>
+    
+                <p> We provide end-to-end waste solutions, including recycling, upcycling, smart waste tracking, and eco-friendly disposal methods. Our cutting-edge technology helps businesses and communities reduce waste, optimize recycling, and contribute to a circular economy.</p>
+            </div>
+    
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="image/About1.png" alt="Image">
+                    <div class="green-underline"></div>
+                </div>
+                <div class="image-container">
+                    <img src="image/story_oldmng.png" alt="Old waste collection truck">
+                    <div class="green-underline"></div>
+                </div>
+                <div class="image-container">
+                    <img src="image/story_modernmng.png" alt="modern waste collection truck">
+                    <div class="green-underline"></div>
+                </div>
+            </div>
+        </section>
+    
+    
+    </section>
+</body>
+</html>

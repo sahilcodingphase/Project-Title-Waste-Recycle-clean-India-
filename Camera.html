@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Camera with Location & Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8f5;
+        }
+        #camera {
+            width: 50%;
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #map {
+            height: 300px;
+            width: 50%;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        #info {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+        #info {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #camera, #map {
+            width: 100%;
+        }
+
+        #info {
+            font-size: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <h2>Live Camera, Location & Time</h2>
+
+    <!-- Live Camera -->
+    <video id="camera" autoplay></video>
+
+    <!-- Location & Time -->
+    <div id="info">
+        <p>📍 <span id="location">Fetching location...</span></p>
+        <p>🕒 <span id="datetime"></span></p>
+    </div>
+
+    <!-- Google Maps -->
+    <div id="map"></div>
+
+    <script>
+        // Live Camera Access
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    document.getElementById("camera").srcObject = stream;
+                })
+                .catch(() => {
+                    alert("Camera access denied.");
+                });
+        }
+
+        // Fetch Location
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    let lat = position.coords.latitude;
+                    let lng = position.coords.longitude;
+                    document.getElementById("location").innerText = `Lat: ${lat}, Lng: ${lng}`;
+
+                    // Google Maps
+                    let map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 15,
+                        center: { lat: lat, lng: lng },
+                    });
+
+                    new google.maps.Marker({
+                        position: { lat: lat, lng: lng },
+                        map: map,
+                        title: "Your Location",
+                    });
+
+                }, () => {
+                    alert("Location access denied.");
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        // Real-time Date & Time
+        function updateDateTime() {
+            setInterval(() => {
+                let now = new Date();
+                document.getElementById("datetime").innerText = now.toLocaleString();
+            }, 1000);
+        }
+
+        // Initialize
+        startCamera();
+        getLocation();
+        updateDateTime();
+    </script>
+
+    <!-- Google Maps API (Replace YOUR_API_KEY with your real key) -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjNBV4Jp-nencxEKP8xiQ0zwNC5lPw_zQ"></script>
+
+</body>
+</html>

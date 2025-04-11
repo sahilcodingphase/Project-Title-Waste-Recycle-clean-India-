@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Banner</title>
+    
+</head>
+<body>
+    <style> 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('waste-management.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+}
+
+.banner-content {
+    max-width: 50%;
+    color: white;
+}
+
+.banner-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.banner-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.banner-content .highlight {
+    color: #fdee00; /* Yellow color */
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+      }
+
+      .banner-content h1 {
+        font-size: 30px;
+      }
+
+      .banner-content p {
+        font-size: 15px;
+      }
+
+      .banner-content, .banner-image {
+        max-width: 100%;
+      }
+
+      .banner-image {
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .banner-content h1 {
+        font-size: 24px;
+      }
+
+      .banner-content h4 {
+        font-size: 12px;
+      }
+
+      .banner-content p {
+        font-size: 14px;
+      }
+
+    }
+    </style>
+    <section class="banner">
+        <div class="banner-content">
+            <h4>WHO WE ARE</h4>
+            <h1>So Much <span class="highlight">More</span> Than Managing Waste</h1>
+            <p>The work we started 1  years ago continues every day, getting smarter and more innovative as Recycle Waste helps build a sustainable future.</p>
+        </div>
+        <div class="banner-image">
+            <img src="image/waste.png" alt="Waste Management">
+        </div>
+    </section>
+</body>
+</html>
